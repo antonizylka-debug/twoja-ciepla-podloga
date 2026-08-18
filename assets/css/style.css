@@ -1035,3 +1035,48 @@ h3{ font-size:1.15rem; }
   .main-nav a{ font-size:.8rem; }
   .header-cta{ gap:10px; }
 }
+
+/* ---------- blok kontaktowy ---------- */
+.kontakt-pas{ padding-top:0; }
+.kontakt-blok{
+  display:grid; grid-template-columns:1fr 1.15fr; gap:clamp(28px,4vw,56px);
+  background:var(--accent); color:#fff;
+  border-radius:var(--radius-lg); padding:clamp(28px,4vw,48px);
+}
+.kontakt-blok h2{ font-size:clamp(1.25rem,2.2vw,1.6rem); color:#fff; margin-bottom:20px; }
+.kontakt-lista{ list-style:none; margin:0 0 26px; padding:0; display:grid; gap:16px; }
+.kontakt-lista li{ display:flex; align-items:center; gap:14px; font-size:1rem; }
+.kontakt-lista a{ color:#fff; text-decoration:none; border-bottom:1px solid rgba(255,255,255,.35); }
+.kontakt-lista a:hover{ border-bottom-color:#fff; }
+.kontakt-ikona{
+  width:34px; height:34px; flex:none; border-radius:50%;
+  display:grid; place-items:center; background:rgba(255,255,255,.16);
+}
+.kontakt-ikona svg{ width:17px; height:17px; }
+.kontakt-blok p{ color:rgba(255,255,255,.88); font-size:.96rem; line-height:1.7; }
+.kontakt-blok p + p{ margin-top:12px; }
+.kontakt-mocne{ font-weight:600; color:#fff !important; }
+.kontakt-cta{ background:#fff; color:var(--accent-dark); border-color:#fff; }
+.kontakt-cta:hover{ background:var(--dark); color:#fff; border-color:var(--dark); }
+@media (max-width:760px){
+  .kontakt-blok{ grid-template-columns:1fr; }
+}
+
+/* ---------- wpis poradnika z panelem bocznym ---------- */
+.wpis-layout{
+  display:grid; grid-template-columns:minmax(0,1fr) 300px;
+  gap:clamp(28px,4vw,56px); align-items:start;
+}
+.wpis-aside{ position:sticky; top:96px; }
+.kontakt-side{ grid-template-columns:1fr; padding:26px 24px; }
+.kontakt-side h2{ font-size:1.15rem; margin-bottom:16px; }
+.kontakt-side h2 + .kontakt-lista{ margin-bottom:22px; }
+.kontakt-side .kontakt-lista li{ font-size:.92rem; }
+.kontakt-side .kontakt-lista a{ word-break:break-all; }
+.kontakt-side h2:nth-of-type(2){ margin-top:4px; }
+.kontakt-side p{ font-size:.88rem; }
+.kontakt-side .kontakt-cta{ margin-top:20px; width:100%; }
+@media (max-width:1080px){
+  .wpis-layout{ grid-template-columns:1fr; }
+  .wpis-aside{ position:static; max-width:520px; }
+}
