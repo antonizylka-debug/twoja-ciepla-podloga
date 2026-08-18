@@ -614,7 +614,7 @@ h3{ font-size:1.15rem; }
   .kb-toc{ position:static; }
 }
 /* ---------- header: hamburger mode ---------- */
-@media (max-width: 1080px){
+@media (max-width: 1300px){
   .header-cta .phone-link, .header-cta .btn, .header-cta .social-link{ display:none; }
   .nav-toggle{ display:flex; }
 
@@ -1018,3 +1018,20 @@ h3{ font-size:1.15rem; }
 .planer-czynniki li{ position:relative; padding-left:20px; font-size:.9rem; color:var(--on-dark-soft); line-height:1.6; }
 .planer-czynniki li::before{ content:""; position:absolute; left:0; top:.66em; width:8px; height:1px; background:#8f9fff; }
 .planer-czynniki b{ color:var(--on-dark); font-weight:600; }
+
+/* karty poradnika */
+.poradnik-card{ display:flex; flex-direction:column; text-decoration:none; transition:transform .25s var(--ease), box-shadow .25s var(--ease); }
+.poradnik-card:hover{ transform:translateY(-3px); box-shadow:var(--shadow-md); }
+.poradnik-card h3{ margin:10px 0 10px; }
+.poradnik-card p{ flex:1; }
+.poradnik-more{ margin-top:18px; font-weight:600; font-size:.88rem; color:var(--accent-dark); }
+.kb-article h2{ margin-top:0; }
+.kb-article .kb-section + .kb-section{ margin-top:34px; }
+
+/* przy szerszym menu zageszczamy naglowek, zeby CTA sie miescilo */
+@media (min-width:1301px) and (max-width:1560px){
+  .site-header .container{ gap:12px; }
+  .main-nav{ gap:16px; }
+  .main-nav a{ font-size:.8rem; }
+  .header-cta{ gap:10px; }
+}

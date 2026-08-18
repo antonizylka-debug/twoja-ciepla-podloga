@@ -10,4 +10,34 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://twojacieplapodloga.pl/poradnik</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://twojacieplapodloga.pl/poradnik-jaka-podloga-na-ogrzewanie-podlogowe</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://twojacieplapodloga.pl/poradnik-wodne-czy-elektryczne</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://twojacieplapodloga.pl/poradnik-ogrzewanie-podlogowe-w-garazu</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://twojacieplapodloga.pl/poradnik-mieszkanie-deweloperskie</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://twojacieplapodloga.pl/poradnik-frezowanie-czy-tradycyjna-podlogowka</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
