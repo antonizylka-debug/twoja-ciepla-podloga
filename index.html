@@ -111,7 +111,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           722 383 313
         </a>
-        <a href="#kontakt" class="btn btn-primary btn-sm">Bezpłatna wycena</a>
+        <a href="#analiza" class="btn btn-primary btn-sm">Bezpłatna wycena</a>
       </div>
     </nav>
 
@@ -123,7 +123,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         722 383 313
       </a>
-      <a href="#kontakt" class="btn btn-primary btn-sm">Bezpłatna wycena</a>
+      <a href="#analiza" class="btn btn-primary btn-sm">Bezpłatna wycena</a>
       <button type="button" class="nav-toggle" aria-label="Otwórz menu" aria-expanded="false" aria-controls="main-nav">
         <span class="bars"><span></span><span></span><span></span></span>
       </button>
@@ -504,6 +504,271 @@
     </div>
   </section>
 
+
+  <!-- ANKIETA / WYCENA -->
+  <section class="section section-alt" id="analiza">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Wycena online</span>
+        <h2>Policz swoje ogrzewanie podłogowe w 3 minuty</h2>
+        <p class="lede" style="margin-inline:auto;">Wypełnij pomieszczenie po pomieszczeniu, a wrócimy z wyceną i planem pętli. Bez zobowiązań.</p>
+      </div>
+
+      <form class="ank reveal" id="ank" novalidate>
+        <div class="ank-bar">
+          <span class="ank-bar-label">Krok <b id="ankStep">1</b> z 5</span>
+          <div class="ank-bar-track"><div class="ank-bar-fill" id="ankFill"></div></div>
+          <span class="ank-bar-pct" id="ankPct">20%</span>
+        </div>
+
+        <!-- 1. KIM JESTEŚ -->
+        <div class="ank-step is-active" data-step="1">
+          <h3 class="ank-q">Kim jesteś?</h3>
+          <p class="ank-lead">Dopasujemy zakres wyceny i sposób kontaktu.</p>
+          <div class="ank-options">
+            <label class="ank-opt"><input type="radio" name="kim" value="Klient indywidualny" required><span>Klientem indywidualnym</span></label>
+            <label class="ank-opt"><input type="radio" name="kim" value="Instalator lub firma wykonawcza"><span>Instalatorem / firmą wykonawczą</span></label>
+            <label class="ank-opt"><input type="radio" name="kim" value="Architekt lub projektant"><span>Architektem / projektantem</span></label>
+            <label class="ank-opt"><input type="radio" name="kim" value="Deweloper lub inwestor"><span>Deweloperem / inwestorem</span></label>
+          </div>
+        </div>
+
+        <!-- 2. CO ROBISZ + BUDYNEK -->
+        <div class="ank-step" data-step="2">
+          <h3 class="ank-q">Powiedz, co planujesz</h3>
+          <p class="ank-lead">Frezujemy w gotowej wylewce, więc najczęściej pracujemy przy remontach. Przy budowie od zera też doradzimy.</p>
+
+          <fieldset class="ank-field">
+            <legend class="ank-legend">Z czym działasz?</legend>
+            <div class="ank-options cols-2">
+              <label class="ank-opt"><input type="radio" name="etap" value="Remont istniejącego budynku" required><span>Remontuję</span></label>
+              <label class="ank-opt"><input type="radio" name="etap" value="Nowy budynek"><span>Buduję</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="ank-field">
+            <legend class="ank-legend">Rodzaj budynku</legend>
+            <div class="ank-options cols-2">
+              <label class="ank-opt"><input type="radio" name="budynek" value="Dom murowany" required><span>Dom murowany</span></label>
+              <label class="ank-opt"><input type="radio" name="budynek" value="Mieszkanie w bloku"><span>Mieszkanie w bloku</span></label>
+              <label class="ank-opt"><input type="radio" name="budynek" value="Kamienica"><span>Kamienica</span></label>
+              <label class="ank-opt"><input type="radio" name="budynek" value="Lokal usługowy lub biuro"><span>Lokal usługowy / biuro</span></label>
+            </div>
+          </fieldset>
+        </div>
+
+        <!-- 3. POMIESZCZENIA -->
+        <div class="ank-step" data-step="3">
+          <h3 class="ank-q">Rozpisz pomieszczenia</h3>
+          <p class="ank-lead">Podaj metraż każdego pomieszczenia osobno. Na tej podstawie policzymy pętle i długość rury.</p>
+
+          <div id="ankPoziomy"></div>
+
+          <button type="button" class="ank-add ank-add-lvl" id="ankDodajPoziom">
+            <span class="ank-plus">+</span> Dodaj kolejny poziom
+          </button>
+
+          <div class="ank-sum" id="ankSuma"></div>
+        </div>
+
+        <!-- 4. ŹRÓDŁO CIEPŁA -->
+        <div class="ank-step" data-step="4">
+          <h3 class="ank-q">Źródło ciepła</h3>
+          <p class="ank-lead">Od tego zależy temperatura zasilania, a przez to długość i liczba pętli.</p>
+          <div class="ank-options cols-2">
+            <label class="ank-opt"><input type="radio" name="zrodlo" value="Pompa ciepła" required><span>Pompa ciepła</span></label>
+            <label class="ank-opt"><input type="radio" name="zrodlo" value="Kocioł gazowy"><span>Kocioł gazowy</span></label>
+            <label class="ank-opt"><input type="radio" name="zrodlo" value="Kotłownia hybrydowa"><span>Kotłownia hybrydowa</span></label>
+            <label class="ank-opt"><input type="radio" name="zrodlo" value="Sieć miejska lub inne"><span>Sieć miejska / inne</span></label>
+            <label class="ank-opt"><input type="radio" name="zrodlo" value="Jeszcze nie wiem"><span>Jeszcze nie wiem</span></label>
+          </div>
+        </div>
+
+        <!-- 5. KONTAKT -->
+        <div class="ank-step" data-step="5">
+          <h3 class="ank-q">Gdzie wysłać wycenę?</h3>
+          <p class="ank-lead">Zostaw dane, żebyśmy mogli się odezwać.</p>
+
+          <div class="ank-grid">
+            <div class="ank-cf">
+              <label for="ankImie">Imię i nazwisko <span class="req">*</span></label>
+              <input type="text" id="ankImie" name="imie" required autocomplete="name" placeholder="Jan Kowalski">
+            </div>
+            <div class="ank-cf">
+              <label for="ankTel">Telefon <span class="req">*</span></label>
+              <div class="ank-tel">
+                <span class="ank-prefix">+48</span>
+                <input type="tel" id="ankTel" name="telefon" required autocomplete="tel" placeholder="600 700 800">
+              </div>
+            </div>
+            <div class="ank-cf">
+              <label for="ankMail">E-mail</label>
+              <input type="email" id="ankMail" name="email" autocomplete="email" placeholder="jan@example.com">
+            </div>
+            <div class="ank-cf">
+              <label for="ankMiasto">Miasto <span class="req">*</span></label>
+              <input type="text" id="ankMiasto" name="miasto" required autocomplete="address-level2" placeholder="np. Łódź">
+            </div>
+            <div class="ank-cf">
+              <label for="ankTermin">Kiedy planujesz realizację?</label>
+              <select id="ankTermin" name="termin">
+                <option value="">Wybierz</option>
+                <option>Jak najszybciej</option>
+                <option>W ciągu miesiąca</option>
+                <option>W ciągu 3 miesięcy</option>
+                <option>Później / dopiero zbieram oferty</option>
+              </select>
+            </div>
+            <div class="ank-cf ank-cf-wide">
+              <label for="ankMsg">Dodatkowe informacje</label>
+              <textarea id="ankMsg" name="wiadomosc" placeholder="Rodzaj i wiek wylewki, wysokość progów, cokolwiek co uznasz za istotne…"></textarea>
+            </div>
+          </div>
+
+          <label class="ank-consent">
+            <input type="checkbox" name="zgoda" required>
+            <span>Zgadzam się na kontakt w sprawie wyceny i przetwarzanie moich danych. <span class="req">*</span></span>
+          </label>
+        </div>
+
+        <!-- WYNIK -->
+        <div class="ank-step ank-done" data-step="6">
+          <div class="ank-done-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          </div>
+          <h3 class="ank-q">Mamy komplet informacji</h3>
+          <div class="ank-wynik" id="ankWynik"></div>
+          <p class="ank-lead" id="ankKontaktInfo"></p>
+          <div class="ank-done-actions">
+            <a href="#kalkulator" class="btn btn-ghost">Zobacz rozkład pętli</a>
+            <a href="tel:722383313" class="btn btn-primary">Wolisz od razu? 722 383 313</a>
+          </div>
+        </div>
+
+        <p class="ank-error" id="ankError" role="alert"></p>
+
+        <div class="ank-nav">
+          <button type="button" class="btn btn-ghost btn-sm" id="ankBack" hidden>&lsaquo; Wróć</button>
+          <button type="button" class="btn btn-primary" id="ankNext">Przejdź dalej &rarr;</button>
+          <button type="submit" class="btn btn-primary" id="ankSend" hidden>Wyślij zapytanie &rarr;</button>
+        </div>
+      </form>
+
+      <p class="ank-foot">Wynik jest orientacyjny. Dokładny zakres i cenę ustalamy po oględzinach albo po zdjęciach posadzki.</p>
+    </div>
+  </section>
+
+  <!-- PLANER PĘTLI -->
+  <section class="section planer-sec" id="kalkulator">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow on-dark">Narzędzie</span>
+        <h2>Zobacz, jak rozłożą się pętle w Twoim pomieszczeniu</h2>
+        <p class="lede" style="margin-inline:auto;">Podaj wymiary, a narysujemy realny układ rur. Metry liczymy z tego, co widzisz na rysunku, a nie z uproszczonego wzoru.</p>
+      </div>
+
+      <div class="planer reveal">
+        <div class="planer-canvas">
+          <div class="planer-scale" id="planScale">5,0 × 2,0 m</div>
+          <svg id="planSvg" role="img" aria-labelledby="planTitle">
+            <title id="planTitle">Podgląd rozłożenia pętli ogrzewania podłogowego</title>
+          </svg>
+          <div class="planer-legend">
+            <span><i class="lg-pipe"></i> zasilanie</span>
+            <span><i class="lg-pow"></i> powrót</span>
+            <span><i class="lg-feed"></i> doprowadzenie do rozdzielacza</span>
+          </div>
+        </div>
+
+        <div class="planer-controls">
+          <div class="planer-ctrl">
+            <label for="pD">Długość <b id="pDv">5,0 m</b></label>
+            <input type="range" id="pD" min="1" max="20" step="0.5" value="5">
+          </div>
+          <div class="planer-ctrl">
+            <label for="pS">Szerokość <b id="pSv">2,0 m</b></label>
+            <input type="range" id="pS" min="1" max="15" step="0.5" value="2">
+          </div>
+          <div class="planer-ctrl">
+            <label for="pO">Odległość do rozdzielacza <b id="pOv">1,0 m</b></label>
+            <input type="range" id="pO" min="0" max="30" step="0.5" value="1">
+          </div>
+          <div class="planer-ctrl">
+            <label for="pR">Rozstaw rur <b id="pRv">15 cm</b></label>
+            <input type="range" id="pR" min="10" max="20" step="1" value="15">
+            <span class="planer-note" id="pRnote"></span>
+          </div>
+
+          <div class="planer-ctrl">
+            <label for="pZrodlo">Źródło ciepła</label>
+            <select id="pZrodlo" class="planer-select">
+              <option value="pompa">Pompa ciepła</option>
+              <option value="gaz">Kocioł gazowy</option>
+            </select>
+          </div>
+
+          <div class="planer-ctrl">
+            <label for="pRog">Drzwi i rozdzielacz</label>
+            <select id="pRog" class="planer-select">
+              <option value="lg">lewy górny róg</option>
+              <option value="ld">lewy dolny róg</option>
+              <option value="pg">prawy górny róg</option>
+              <option value="pd">prawy dolny róg</option>
+            </select>
+          </div>
+
+          <div class="planer-presets">
+            <button type="button" data-d="2.5" data-s="2">Łazienka</button>
+            <button type="button" data-d="6" data-s="5">Salon</button>
+            <button type="button" data-d="4" data-s="3.5">Pokój</button>
+            <button type="button" data-d="3.5" data-s="2.5">Kuchnia</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="wyniki reveal">
+        <div class="wyniki-glowny">
+          <span class="wyniki-k">Razem rury do zamówienia</span>
+          <strong id="poRazem">—</strong>
+          <span class="wyniki-jedn">metrów bieżących (mb)</span>
+        </div>
+
+        <div class="wyniki-panel">
+          <div class="wyniki-row"><span>Wybrany rozstaw</span><b id="poRozstaw">—</b></div>
+          <div class="wyniki-row"><span>Rura w pętlach <i>bez doprowadzenia</i></span><b id="poRura">—</b></div>
+          <div class="wyniki-row"><span>Doprowadzenie <i>tam i z powrotem</i></span><b id="poDoj">—</b></div>
+          <div class="wyniki-row"><span>Powierzchnia</span><b id="poM2">—</b></div>
+          <div class="wyniki-row"><span>Czas frezowania</span><b id="poCzas">—</b></div>
+
+          <div class="wyniki-kafle">
+            <div class="wyniki-kafel akcent">
+              <span class="wyniki-k">Sugerowana ilość pętli</span>
+              <strong id="poPetle">—</strong>
+              <span class="wyniki-sub" id="poUwaga"></span>
+            </div>
+            <div class="wyniki-kafel">
+              <span class="wyniki-k">Średnia dł. jednej pętli</span>
+              <strong id="poSrednia">—</strong>
+              <span class="wyniki-sub" id="poPetlaUwaga"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="planer-czynniki reveal">
+        <h3>Co jeszcze wpływa na długość rury</h3>
+        <ul>
+          <li><b>Kształt pomieszczenia</b> — nieregularne bryły wymagają więcej rury, bo trzeba omijać przeszkody.</li>
+          <li><b>Strefy grzewcze</b> — tam, gdzie potrzeba wyższej temperatury, jak w łazience, rury układamy gęściej.</li>
+          <li><b>Rodzaj rury</b> — materiał narzuca maksymalną długość jednej pętli, zwykle 80–100 m.</li>
+        </ul>
+      </div>
+
+      <p class="planer-foot">
+        Wynik orientacyjny. W realnym projekcie dochodzą jeszcze straty ciepła pomieszczenia, zagęszczenie przy oknach i omijanie zabudowy stałej.
+        <a href="#analiza">Wyślij dane przez analizę techniczną</a>, a policzymy to dokładnie.
+      </p>
+    </div>
+  </section>
   <!-- FINAL CTA -->
   <section class="section" id="kontakt">
     <div class="container">
