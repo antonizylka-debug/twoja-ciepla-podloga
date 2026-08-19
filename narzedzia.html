@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kalkulatory ogrzewania podłogowego — planer pętli, porównywarka, harmonogram | Twoja Ciepła Podłoga</title>
+<meta name="description" content="Darmowe narzędzia: planer rozkładu pętli z policzoną długością rury, porównanie frezowania z tradycyjną podłogówką, harmonogram prac dzień po dniu i konfigurator sterowania.">
+<link rel="canonical" href="https://twojacieplapodloga.pl/narzedzia">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'%3E%3Crect width='96' height='96' rx='20' fill='%23101010'/%3E%3Cpath d='M12,12 L84,12 L84,84 L24,84 L24,24' stroke='%23e8232c' stroke-width='9' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M24,24 L72,24 L72,72 L34,72 L34,34' stroke='%231e90ff' stroke-width='9' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M34,34 L62,34 L62,62 L44,62 L44,46' stroke='%23e8232c' stroke-width='9' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<meta property="og:title" content="Kalkulatory ogrzewania podłogowego">
+<meta property="og:description" content="Planer rozkładu pętli, porównywarka z tradycyjną podłogówką, harmonogram prac i konfigurator sterowania. Wszystko za darmo, bez podawania danych.">
+<meta property="og:image" content="https://antonizylka-debug.github.io/twoja-ciepla-podloga/assets/img/banery/baner-1.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:site_name" content="Twoja Ciepła Podłoga">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;500&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="brand">
+      <span class="brand-mark">
+        <svg viewBox="0 0 96 96" fill="none">
+          <path d="M6,6 L90,6 L90,90 L18,90 L18,18" stroke="#e8232c" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M18,18 L78,18 L78,78 L30,78 L30,30" stroke="#1e90ff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M30,30 L66,30 L66,66 L42,66 L42,42" stroke="#e8232c" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M42,42 L54,42 L54,54 L48,54" stroke="#1e90ff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span>Twoja Ciepła Podłoga<small>Frezowanie ogrzewania podłogowego</small></span>
+    </a>
+
+    <nav class="main-nav" aria-label="Nawigacja główna" id="main-nav">
+      <a href="index.html#proces">Proces</a>
+      <a href="index.html#cennik">Cennik</a>
+      <a href="index.html#realizacje">Realizacje</a>
+      <a href="automatyka.html">Automatyka</a>
+      <a href="usuwanie-kleju.html">Usuwanie kleju</a>
+      <a href="narzedzia.html">Narzędzia</a>
+      <a href="poradnik.html">Poradnik</a>
+      <a href="kompendium-wiedzy.html">Wiedza</a>
+      <div class="mobile-only">
+        <a href="tel:722383313" class="phone-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          722 383 313
+        </a>
+        <a href="index.html#analiza" class="btn btn-primary btn-sm">Bezpłatna wycena</a>
+      </div>
+    </nav>
+
+    <div class="header-cta">
+      <a href="https://www.facebook.com/twojacieplapodloga/" target="_blank" rel="noopener" class="social-link" aria-label="Nasz profil na Facebooku">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 9.5H15.3V6.6C15 6.6 14 6.5 12.9 6.5c-2.3 0-3.9 1.4-3.9 4v2.4H6.5v3.2h2.5V21h3.2v-4.9h2.5l.4-3.2h-2.9v-2.1c0-.9.3-1.3 1.3-1.3Z"/></svg>
+      </a>
+      <a href="tel:722383313" class="phone-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        722 383 313
+      </a>
+      <a href="index.html#analiza" class="btn btn-primary btn-sm">Bezpłatna wycena</a>
+      <button type="button" class="nav-toggle" aria-label="Otwórz menu" aria-expanded="false" aria-controls="main-nav">
+        <span class="bars"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Szlifowanie z odciągiem pyłu</span>
+    <span>Podłoże gotowe od ręki</span>
+    <span>Można łączyć z frezowaniem</span>
+    <span>Cała Polska</span>
+    <span>Szlifowanie z odciągiem pyłu</span>
+    <span>Podłoże gotowe od ręki</span>
+    <span>Można łączyć z frezowaniem</span>
+    <span>Cała Polska</span>
+  </div>
+</div>
+
+
+<main>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-copy reveal" style="max-width:780px; padding-bottom:60px;">
+        <span class="eyebrow on-dark">Narzędzia</span>
+        <h1>Sprawdź swoją instalację, zanim do nas zadzwonisz</h1>
+        <p class="lede">Cztery narzędzia liczące na tych samych zasadach, według których projektujemy i wykonujemy instalacje. Nic nie trzeba podawać, nic się nigdzie nie zapisuje.</p>
+        <div class="hero-actions">
+          <a href="#planer" class="btn btn-primary">Zacznij od planera pętli</a>
+          <a href="index.html#analiza" class="btn btn-ghost">Wolisz od razu wycenę? →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-bottom:0;">
+    <div class="container">
+      <div class="narz-spis reveal">
+        <a href="#planer"><b>Planer pętli</b><span>Rysunek układu rur i metry rury</span></a>
+        <a href="#porownanie"><b>Porównywarka</b><span>Frezowanie kontra tradycyjna metoda</span></a>
+        <a href="#harmonogram"><b>Harmonogram</b><span>Ile dni potrwa u Ciebie</span></a>
+        <a href="automatyka.html#konfigurator"><b>Konfigurator sterowania</b><span>Termostaty, siłowniki, listwa</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANER PĘTLI -->
+  <section class="section planer-sec" id="planer">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow on-dark">Narzędzie</span>
+        <h2>Zobacz, jak rozłożą się pętle w Twoim pomieszczeniu</h2>
+        <p class="lede" style="margin-inline:auto;">Podaj wymiary, a narysujemy realny układ rur. Metry liczymy z tego, co widzisz na rysunku, a nie z uproszczonego wzoru.</p>
+      </div>
+
+      <div class="planer reveal">
+        <div class="planer-canvas">
+          <div class="planer-scale" id="planScale">5,0 × 2,0 m</div>
+          <svg id="planSvg" role="img" aria-labelledby="planTitle">
+            <title id="planTitle">Podgląd rozłożenia pętli ogrzewania podłogowego</title>
+          </svg>
+          <div class="planer-legend">
+            <span><i class="lg-pipe"></i> zasilanie</span>
+            <span><i class="lg-pow"></i> powrót</span>
+            <span><i class="lg-feed"></i> doprowadzenie do rozdzielacza</span>
+          </div>
+        </div>
+
+        <div class="planer-controls">
+          <div class="planer-ctrl">
+            <label for="pD">Długość <b id="pDv">5,0 m</b></label>
+            <input type="range" id="pD" min="1" max="20" step="0.5" value="5">
+          </div>
+          <div class="planer-ctrl">
+            <label for="pS">Szerokość <b id="pSv">2,0 m</b></label>
+            <input type="range" id="pS" min="1" max="15" step="0.5" value="2">
+          </div>
+          <div class="planer-ctrl">
+            <label for="pO">Odległość do rozdzielacza <b id="pOv">1,0 m</b></label>
+            <input type="range" id="pO" min="0" max="30" step="0.5" value="1">
+          </div>
+          <div class="planer-ctrl">
+            <label for="pR">Rozstaw rur <b id="pRv">15 cm</b></label>
+            <input type="range" id="pR" min="10" max="20" step="1" value="15">
+            <span class="planer-note" id="pRnote"></span>
+          </div>
+
+          <div class="planer-ctrl">
+            <label for="pZrodlo">Źródło ciepła</label>
+            <select id="pZrodlo" class="planer-select">
+              <option value="pompa">Pompa ciepła</option>
+              <option value="gaz">Kocioł gazowy</option>
+            </select>
+          </div>
+
+          <div class="planer-ctrl">
+            <label for="pRog">Drzwi i rozdzielacz</label>
+            <select id="pRog" class="planer-select">
+              <option value="lg">lewy górny róg</option>
+              <option value="ld">lewy dolny róg</option>
+              <option value="pg">prawy górny róg</option>
+              <option value="pd">prawy dolny róg</option>
+            </select>
+          </div>
+
+          <div class="planer-presets">
+            <button type="button" data-d="2.5" data-s="2">Łazienka</button>
+            <button type="button" data-d="6" data-s="5">Salon</button>
+            <button type="button" data-d="4" data-s="3.5">Pokój</button>
+            <button type="button" data-d="3.5" data-s="2.5">Kuchnia</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="wyniki reveal">
+        <div class="wyniki-glowny">
+          <span class="wyniki-k">Razem rury do zamówienia</span>
+          <strong id="poRazem">—</strong>
+          <span class="wyniki-jedn">metrów bieżących (mb)</span>
+        </div>
+
+        <div class="wyniki-panel">
+          <div class="wyniki-row"><span>Wybrany rozstaw</span><b id="poRozstaw">—</b></div>
+          <div class="wyniki-row"><span>Rura w pętlach <i>bez doprowadzenia</i></span><b id="poRura">—</b></div>
+          <div class="wyniki-row"><span>Doprowadzenie <i>tam i z powrotem</i></span><b id="poDoj">—</b></div>
+          <div class="wyniki-row"><span>Powierzchnia</span><b id="poM2">—</b></div>
+          <div class="wyniki-row"><span>Czas frezowania</span><b id="poCzas">—</b></div>
+
+          <div class="wyniki-kafle">
+            <div class="wyniki-kafel akcent">
+              <span class="wyniki-k">Sugerowana ilość pętli</span>
+              <strong id="poPetle">—</strong>
+              <span class="wyniki-sub" id="poUwaga"></span>
+            </div>
+            <div class="wyniki-kafel">
+              <span class="wyniki-k">Średnia dł. jednej pętli</span>
+              <strong id="poSrednia">—</strong>
+              <span class="wyniki-sub" id="poPetlaUwaga"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="planer-czynniki reveal">
+        <h3>Co jeszcze wpływa na długość rury</h3>
+        <ul>
+          <li><b>Kształt pomieszczenia</b> — nieregularne bryły wymagają więcej rury, bo trzeba omijać przeszkody.</li>
+          <li><b>Strefy grzewcze</b> — tam, gdzie potrzeba wyższej temperatury, jak w łazience, rury układamy gęściej.</li>
+          <li><b>Rodzaj rury</b> — materiał narzuca maksymalną długość jednej pętli, zwykle 80–100 m.</li>
+        </ul>
+      </div>
+
+      <p class="planer-foot">
+        Wynik orientacyjny. W realnym projekcie dochodzą jeszcze straty ciepła pomieszczenia, zagęszczenie przy oknach i omijanie zabudowy stałej.
+        <a href="index.html#analiza">Wyślij dane przez analizę techniczną</a>, a policzymy to dokładnie.
+      </p>
+    </div>
+  </section>
+
+  <!-- POROWNYWARKA -->
+  <section class="section" id="porownanie">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Porównanie</span>
+        <h2>Frezowanie kontra tradycyjna podłogówka</h2>
+        <p class="lede" style="margin-inline:auto;">Przesuń suwak na swój metraż i zobacz, czym te dwie metody różnią się w praktyce.</p>
+      </div>
+
+      <div class="porown reveal">
+        <div class="porown-suwak">
+          <label for="poM">Powierzchnia <b id="poMv">80 m²</b></label>
+          <input type="range" id="poM" min="20" max="250" step="5" value="80">
+        </div>
+
+        <div class="porown-tabela">
+          <div class="porown-kol porown-nasza">
+            <div class="porown-tyt">Frezowanie <span>nasza metoda</span></div>
+            <dl>
+              <dt>Podniesienie poziomu podłogi</dt><dd><b>0 cm</b></dd>
+              <dt>Skuwanie starej posadzki</dt><dd><b>nie</b></dd>
+              <dt>Gruz do wywiezienia</dt><dd><b id="poGruzF">—</b></dd>
+              <dt>Prace na budowie</dt><dd><b id="poDniF">—</b></dd>
+              <dt>Czekanie na wyschnięcie</dt><dd><b>brak</b></dd>
+              <dt>Podłogę można kłaść po</dt><dd class="mocne"><b id="poGotF">—</b></dd>
+            </dl>
+          </div>
+
+          <div class="porown-kol">
+            <div class="porown-tyt">Tradycyjna podłogówka <span>przy remoncie</span></div>
+            <dl>
+              <dt>Podniesienie poziomu podłogi</dt><dd><b>ok. 12–15 cm</b></dd>
+              <dt>Skuwanie starej posadzki</dt><dd><b>tak</b></dd>
+              <dt>Gruz do wywiezienia</dt><dd><b id="poGruzT">—</b></dd>
+              <dt>Prace na budowie</dt><dd><b id="poDniT">—</b></dd>
+              <dt>Czekanie na wyschnięcie</dt><dd><b>3–4 tygodnie</b></dd>
+              <dt>Podłogę można kłaść po</dt><dd class="mocne"><b id="poGotT">—</b></dd>
+            </dl>
+          </div>
+        </div>
+
+        <p class="porown-stopka">Porównanie dotyczy remontu, czyli sytuacji, w której trzeba usunąć istniejącą posadzkę. Przy budowie od zera, gdzie wylewkę i tak się robi, różnica w czasie jest mniejsza. Liczby orientacyjne, dokładny harmonogram podajemy w ofercie.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- HARMONOGRAM -->
+  <section class="section section-alt" id="harmonogram">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Ile to potrwa</span>
+        <h2>Twój harmonogram dzień po dniu</h2>
+        <p class="lede" style="margin-inline:auto;">Podaj metraż i zakres, a rozpiszemy, co dzieje się kiedy.</p>
+      </div>
+
+      <div class="harm reveal">
+        <div class="harm-sterowanie">
+          <div class="harm-pole">
+            <label for="hM">Powierzchnia <b id="hMv">80 m²</b></label>
+            <input type="range" id="hM" min="20" max="250" step="5" value="80">
+          </div>
+          <div class="harm-pole">
+            <label for="hZakres">Zakres prac</label>
+            <select id="hZakres">
+              <option value="frez">Samo frezowanie</option>
+              <option value="pelny" selected>Frezowanie z ułożeniem rur i podłączeniem</option>
+              <option value="kotlownia">Pełen zakres z kotłownią i sterowaniem</option>
+            </select>
+          </div>
+        </div>
+
+        <ol class="harm-lista" id="harmLista"></ol>
+
+        <div class="harm-suma">
+          <span>Łącznie prac na budowie</span>
+          <strong id="harmSuma">—</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-block reveal">
+        <span class="eyebrow on-dark">Bezpłatna wycena</span>
+        <h2>Liczby się zgadzają? Sprawdźmy to na Twojej posadzce</h2>
+        <p>Narzędzia liczą orientacyjnie. Dokładny zakres i cenę ustalamy po oględzinach albo po zdjęciach wylewki.</p>
+        <div class="cta-actions">
+          <a href="tel:722383313" class="btn btn-primary">Zadzwoń: 722 383 313</a>
+          <a href="index.html#analiza" class="btn btn-ghost" style="border-color:rgba(255,255,255,.22);color:#fff;">Wypełnij ankietę</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<section class="section kontakt-pas">
+  <div class="container">
+    <div class="kontakt-blok reveal">
+      <div class="kontakt-kol">
+        <h2>Kontakt z nami</h2>
+        <ul class="kontakt-lista">
+          <li>
+            <span class="kontakt-ikona"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20c0-3.6 3.4-6 7.5-6s7.5 2.4 7.5 6"/></svg></span>
+            <span>Krystian Żyłka</span>
+          </li>
+          <li>
+            <span class="kontakt-ikona"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+            <a href="tel:722383313">722 383 313</a>
+          </li>
+          <li>
+            <span class="kontakt-ikona"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 6 9 6 9-6"/></svg></span>
+            <a href="mailto:twojacieplapodloga@gmail.com">twojacieplapodloga@gmail.com</a>
+          </li>
+        </ul>
+        <a href="index.html#analiza" class="btn btn-light btn-sm kontakt-cta">Zamów bezpłatną wycenę</a>
+      </div>
+
+      <div class="kontakt-kol">
+        <h2>O nas</h2>
+        <p>Specjalizujemy się we frezowaniu posadzek pod ogrzewanie podłogowe oraz w montażu ogrzewania podłogowego. Robimy to bez skuwania wylewki i bez podnoszenia poziomu podłogi, a powierzchnię do 100 m² jesteśmy w stanie sfrezować w jeden dzień.</p>
+        <p>Bierzemy na siebie całość: projekt rozkładu pętli, frezowanie, ułożenie rur, podłączenie do źródła ciepła i próbę szczelności.</p>
+        <p class="kontakt-mocne">Nasze usługi świadczymy na terenie całej Polski.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="brand">
+          <span class="brand-mark">
+            <svg viewBox="0 0 96 96" fill="none">
+          <path d="M6,6 L90,6 L90,90 L18,90 L18,18" stroke="#e8232c" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M18,18 L78,18 L78,78 L30,78 L30,30" stroke="#1e90ff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M30,30 L66,30 L66,66 L42,66 L42,42" stroke="#e8232c" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M42,42 L54,42 L54,54 L48,54" stroke="#1e90ff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+          </span>
+          <span>Twoja Ciepła Podłoga</span>
+        </a>
+        <p>Specjalizujemy się w frezowaniu posadzek pod ogrzewanie podłogowe oraz montażu ogrzewania podłogowego na terenie całej Polski.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Nawigacja</h4>
+        <a href="index.html#proces">Proces</a>
+        <a href="index.html#realizacje">Realizacje</a>
+        <a href="automatyka.html">Automatyka</a>
+        <a href="usuwanie-kleju.html">Usuwanie kleju</a>
+        <a href="narzedzia.html">Narzędzia</a>
+        <a href="poradnik.html">Poradnik</a>
+        <a href="kompendium-wiedzy.html">Wiedza</a>
+      </div>
+      <div class="footer-col">
+        <h4>Dane firmy</h4>
+        <span>Twoja Ciepła Podłoga</span>
+        <span>Krystian Żyłka</span>
+        <span>Luboszewy 46</span>
+        <span>97-217 Lubochnia</span>
+        <span>NIP 7731483991</span>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <a href="tel:722383313">722 383 313</a>
+        <a href="mailto:twojacieplapodloga@gmail.com">twojacieplapodloga@gmail.com</a>
+        <a href="https://www.facebook.com/twojacieplapodloga/" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Twoja Ciepła Podłoga. Wszelkie prawa zastrzeżone.</span>
+      <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

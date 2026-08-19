@@ -109,6 +109,7 @@
       <a href="#realizacje">Realizacje</a>
       <a href="automatyka.html">Automatyka</a>
       <a href="usuwanie-kleju.html">Usuwanie kleju</a>
+      <a href="narzedzia.html">Narzędzia</a>
       <a href="poradnik.html">Poradnik</a>
       <a href="kompendium-wiedzy.html">Wiedza</a>
       <div class="mobile-only">
@@ -288,41 +289,6 @@
   </section>
 
 
-  <!-- HARMONOGRAM -->
-  <section class="section section-alt" id="harmonogram">
-    <div class="container">
-      <div class="section-head center reveal">
-        <span class="eyebrow">Ile to potrwa</span>
-        <h2>Twój harmonogram dzień po dniu</h2>
-        <p class="lede" style="margin-inline:auto;">Podaj metraż i zakres, a rozpiszemy, co dzieje się kiedy.</p>
-      </div>
-
-      <div class="harm reveal">
-        <div class="harm-sterowanie">
-          <div class="harm-pole">
-            <label for="hM">Powierzchnia <b id="hMv">80 m²</b></label>
-            <input type="range" id="hM" min="20" max="250" step="5" value="80">
-          </div>
-          <div class="harm-pole">
-            <label for="hZakres">Zakres prac</label>
-            <select id="hZakres">
-              <option value="frez">Samo frezowanie</option>
-              <option value="pelny" selected>Frezowanie z ułożeniem rur i podłączeniem</option>
-              <option value="kotlownia">Pełen zakres z kotłownią i sterowaniem</option>
-            </select>
-          </div>
-        </div>
-
-        <ol class="harm-lista" id="harmLista"></ol>
-
-        <div class="harm-suma">
-          <span>Łącznie prac na budowie</span>
-          <strong id="harmSuma">—</strong>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- PRICING -->
   <section class="section section-alt" id="cennik">
     <div class="container">
@@ -367,52 +333,6 @@
     </div>
   </section>
 
-
-  <!-- POROWNYWARKA -->
-  <section class="section" id="porownanie">
-    <div class="container">
-      <div class="section-head center reveal">
-        <span class="eyebrow">Porównanie</span>
-        <h2>Frezowanie kontra tradycyjna podłogówka</h2>
-        <p class="lede" style="margin-inline:auto;">Przesuń suwak na swój metraż i zobacz, czym te dwie metody różnią się w praktyce.</p>
-      </div>
-
-      <div class="porown reveal">
-        <div class="porown-suwak">
-          <label for="poM">Powierzchnia <b id="poMv">80 m²</b></label>
-          <input type="range" id="poM" min="20" max="250" step="5" value="80">
-        </div>
-
-        <div class="porown-tabela">
-          <div class="porown-kol porown-nasza">
-            <div class="porown-tyt">Frezowanie <span>nasza metoda</span></div>
-            <dl>
-              <dt>Podniesienie poziomu podłogi</dt><dd><b>0 cm</b></dd>
-              <dt>Skuwanie starej posadzki</dt><dd><b>nie</b></dd>
-              <dt>Gruz do wywiezienia</dt><dd><b id="poGruzF">—</b></dd>
-              <dt>Prace na budowie</dt><dd><b id="poDniF">—</b></dd>
-              <dt>Czekanie na wyschnięcie</dt><dd><b>brak</b></dd>
-              <dt>Podłogę można kłaść po</dt><dd class="mocne"><b id="poGotF">—</b></dd>
-            </dl>
-          </div>
-
-          <div class="porown-kol">
-            <div class="porown-tyt">Tradycyjna podłogówka <span>przy remoncie</span></div>
-            <dl>
-              <dt>Podniesienie poziomu podłogi</dt><dd><b>ok. 12–15 cm</b></dd>
-              <dt>Skuwanie starej posadzki</dt><dd><b>tak</b></dd>
-              <dt>Gruz do wywiezienia</dt><dd><b id="poGruzT">—</b></dd>
-              <dt>Prace na budowie</dt><dd><b id="poDniT">—</b></dd>
-              <dt>Czekanie na wyschnięcie</dt><dd><b>3–4 tygodnie</b></dd>
-              <dt>Podłogę można kłaść po</dt><dd class="mocne"><b id="poGotT">—</b></dd>
-            </dl>
-          </div>
-        </div>
-
-        <p class="porown-stopka">Porównanie dotyczy remontu, czyli sytuacji, w której trzeba usunąć istniejącą posadzkę. Przy budowie od zera, gdzie wylewkę i tak się robi, różnica w czasie jest mniejsza. Liczby orientacyjne, dokładny harmonogram podajemy w ofercie.</p>
-      </div>
-    </div>
-  </section>
 
   <!-- ANKIETA / WYCENA -->
   <section class="section section-alt" id="analiza">
@@ -840,117 +760,27 @@
   </section>
 
 
-  <!-- PLANER PĘTLI -->
-  <section class="section planer-sec" id="kalkulator">
+
+  <!-- NARZEDZIA -->
+  <section class="section section-alt" id="narzedzia-zajawka">
     <div class="container">
-      <div class="section-head center reveal">
-        <span class="eyebrow on-dark">Narzędzie</span>
-        <h2>Zobacz, jak rozłożą się pętle w Twoim pomieszczeniu</h2>
-        <p class="lede" style="margin-inline:auto;">Podaj wymiary, a narysujemy realny układ rur. Metry liczymy z tego, co widzisz na rysunku, a nie z uproszczonego wzoru.</p>
-      </div>
-
-      <div class="planer reveal">
-        <div class="planer-canvas">
-          <div class="planer-scale" id="planScale">5,0 × 2,0 m</div>
-          <svg id="planSvg" role="img" aria-labelledby="planTitle">
-            <title id="planTitle">Podgląd rozłożenia pętli ogrzewania podłogowego</title>
-          </svg>
-          <div class="planer-legend">
-            <span><i class="lg-pipe"></i> zasilanie</span>
-            <span><i class="lg-pow"></i> powrót</span>
-            <span><i class="lg-feed"></i> doprowadzenie do rozdzielacza</span>
-          </div>
+      <div class="narz-zajawka reveal">
+        <div class="narz-txt">
+          <span class="eyebrow">Narzędzia</span>
+          <h2>Policz i zobacz wszystko sam, zanim zadzwonisz</h2>
+          <p>Przygotowaliśmy cztery narzędzia, w których sprawdzisz swoją sytuację bez czekania na wycenę: rysunek rozkładu pętli w Twoim pomieszczeniu, porównanie z tradycyjną podłogówką, harmonogram prac dzień po dniu i dobór elementów sterowania.</p>
+          <a href="narzedzia.html" class="btn btn-primary">Otwórz narzędzia</a>
         </div>
-
-        <div class="planer-controls">
-          <div class="planer-ctrl">
-            <label for="pD">Długość <b id="pDv">5,0 m</b></label>
-            <input type="range" id="pD" min="1" max="20" step="0.5" value="5">
-          </div>
-          <div class="planer-ctrl">
-            <label for="pS">Szerokość <b id="pSv">2,0 m</b></label>
-            <input type="range" id="pS" min="1" max="15" step="0.5" value="2">
-          </div>
-          <div class="planer-ctrl">
-            <label for="pO">Odległość do rozdzielacza <b id="pOv">1,0 m</b></label>
-            <input type="range" id="pO" min="0" max="30" step="0.5" value="1">
-          </div>
-          <div class="planer-ctrl">
-            <label for="pR">Rozstaw rur <b id="pRv">15 cm</b></label>
-            <input type="range" id="pR" min="10" max="20" step="1" value="15">
-            <span class="planer-note" id="pRnote"></span>
-          </div>
-
-          <div class="planer-ctrl">
-            <label for="pZrodlo">Źródło ciepła</label>
-            <select id="pZrodlo" class="planer-select">
-              <option value="pompa">Pompa ciepła</option>
-              <option value="gaz">Kocioł gazowy</option>
-            </select>
-          </div>
-
-          <div class="planer-ctrl">
-            <label for="pRog">Drzwi i rozdzielacz</label>
-            <select id="pRog" class="planer-select">
-              <option value="lg">lewy górny róg</option>
-              <option value="ld">lewy dolny róg</option>
-              <option value="pg">prawy górny róg</option>
-              <option value="pd">prawy dolny róg</option>
-            </select>
-          </div>
-
-          <div class="planer-presets">
-            <button type="button" data-d="2.5" data-s="2">Łazienka</button>
-            <button type="button" data-d="6" data-s="5">Salon</button>
-            <button type="button" data-d="4" data-s="3.5">Pokój</button>
-            <button type="button" data-d="3.5" data-s="2.5">Kuchnia</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="wyniki reveal">
-        <div class="wyniki-glowny">
-          <span class="wyniki-k">Razem rury do zamówienia</span>
-          <strong id="poRazem">—</strong>
-          <span class="wyniki-jedn">metrów bieżących (mb)</span>
-        </div>
-
-        <div class="wyniki-panel">
-          <div class="wyniki-row"><span>Wybrany rozstaw</span><b id="poRozstaw">—</b></div>
-          <div class="wyniki-row"><span>Rura w pętlach <i>bez doprowadzenia</i></span><b id="poRura">—</b></div>
-          <div class="wyniki-row"><span>Doprowadzenie <i>tam i z powrotem</i></span><b id="poDoj">—</b></div>
-          <div class="wyniki-row"><span>Powierzchnia</span><b id="poM2">—</b></div>
-          <div class="wyniki-row"><span>Czas frezowania</span><b id="poCzas">—</b></div>
-
-          <div class="wyniki-kafle">
-            <div class="wyniki-kafel akcent">
-              <span class="wyniki-k">Sugerowana ilość pętli</span>
-              <strong id="poPetle">—</strong>
-              <span class="wyniki-sub" id="poUwaga"></span>
-            </div>
-            <div class="wyniki-kafel">
-              <span class="wyniki-k">Średnia dł. jednej pętli</span>
-              <strong id="poSrednia">—</strong>
-              <span class="wyniki-sub" id="poPetlaUwaga"></span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="planer-czynniki reveal">
-        <h3>Co jeszcze wpływa na długość rury</h3>
-        <ul>
-          <li><b>Kształt pomieszczenia</b> — nieregularne bryły wymagają więcej rury, bo trzeba omijać przeszkody.</li>
-          <li><b>Strefy grzewcze</b> — tam, gdzie potrzeba wyższej temperatury, jak w łazience, rury układamy gęściej.</li>
-          <li><b>Rodzaj rury</b> — materiał narzuca maksymalną długość jednej pętli, zwykle 80–100 m.</li>
+        <ul class="narz-lista">
+          <li><b>Planer pętli</b><span>Rysunek układu rur i metry policzone z geometrii</span></li>
+          <li><b>Porównywarka</b><span>Frezowanie kontra tradycyjna podłogówka</span></li>
+          <li><b>Harmonogram</b><span>Ile dni potrwa u Ciebie</span></li>
+          <li><b>Konfigurator sterowania</b><span>Ile termostatów i siłowników potrzebujesz</span></li>
         </ul>
       </div>
-
-      <p class="planer-foot">
-        Wynik orientacyjny. W realnym projekcie dochodzą jeszcze straty ciepła pomieszczenia, zagęszczenie przy oknach i omijanie zabudowy stałej.
-        <a href="#analiza">Wyślij dane przez analizę techniczną</a>, a policzymy to dokładnie.
-      </p>
     </div>
   </section>
+
   <!-- FINAL CTA -->
   <section class="section" id="kontakt">
     <div class="container">
@@ -1031,6 +861,7 @@
         <a href="#realizacje">Realizacje</a>
         <a href="automatyka.html">Automatyka</a>
         <a href="usuwanie-kleju.html">Usuwanie kleju</a>
+        <a href="narzedzia.html">Narzędzia</a>
         <a href="poradnik.html">Poradnik</a>
         <a href="kompendium-wiedzy.html">Wiedza</a>
         <a href="#faq">FAQ</a>

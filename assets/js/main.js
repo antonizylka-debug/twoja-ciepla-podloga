@@ -34,7 +34,7 @@
       if(e.key === "Escape"){ setOpen(false); }
     });
     window.addEventListener("resize", function(){
-      if(window.innerWidth > 1300){ setOpen(false); }
+      if(window.innerWidth > 1360){ setOpen(false); }
     });
   }
 
