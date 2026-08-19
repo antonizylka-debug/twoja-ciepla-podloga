@@ -881,7 +881,9 @@
 
       /* Pelen zakres, czyli frezowanie z ulozeniem rur i podlaczeniem,
          to zwykle jeden dzien, przy duzym metrazu dwa. */
-      var dniF = m <= 120 ? 1 : (m <= 250 ? 2 : Math.ceil(m / 120));
+      /* Pelen zakres nie przekracza dwoch dni do 150 m2.
+         Powyzej doliczamy dzien na kazde kolejne 100 m2. */
+      var dniF = m <= 120 ? 1 : (m <= 150 ? 2 : 2 + Math.ceil((m - 150) / 100));
       var dniT = Math.max(3, Math.ceil(m / 25) + 2);   /* skuwanie, izolacja, rury, wylewka */
       var schniecie = 24;                               /* dni, srednio 3-4 tygodnie */
       var gruzT = m * 0.11;
@@ -923,7 +925,7 @@
       if(zakres === "frez"){
         dni = m <= 200 ? 1 : Math.ceil(m / 200);
       } else {
-        dni = m <= 120 ? 1 : (m <= 250 ? 2 : Math.ceil(m / 120));
+        dni = m <= 120 ? 1 : (m <= 150 ? 2 : 2 + Math.ceil((m - 150) / 100));
       }
       var opisDni = dni === 1 ? "1 dzień" : dni + " dni";
 
