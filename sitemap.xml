@@ -55,4 +55,24 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://twojacieplapodloga.pl/poradnik-ile-kosztuje-ogrzewanie-podlogowe</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://twojacieplapodloga.pl/poradnik-temperatura-ogrzewania-podlogowego</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://twojacieplapodloga.pl/poradnik-ogrzewanie-podlogowe-pompa-ciepla</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://twojacieplapodloga.pl/poradnik-podlogowka-nie-grzeje</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
