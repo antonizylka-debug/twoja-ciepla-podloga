@@ -852,4 +852,17 @@
     pokaz(1);
   }
 
+
+  /* ---------- przycisk powrotu na gore ---------- */
+  var doGory = document.getElementById("doGory");
+  if(doGory){
+    var pokazGore = function(){
+      doGory.classList.toggle("is-widoczny", window.scrollY > 900);
+    };
+    document.addEventListener("scroll", pokazGore, { passive:true });
+    pokazGore();
+    doGory.addEventListener("click", function(){
+      window.scrollTo({ top:0, behavior:"smooth" });
+    });
+  }
 })();
