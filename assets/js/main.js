@@ -865,4 +865,131 @@
       window.scrollTo({ top:0, behavior:"smooth" });
     });
   }
+
+  /* ==========================================================================
+     POROWNYWARKA: frezowanie kontra tradycyjna podlogowka
+     Zalozenia: frezowanie do 100 m2 dziennie, wylewka 5 cm o gestosci
+     ok. 2200 kg/m3 daje ok. 110 kg gruzu z metra kwadratowego przy skuwaniu.
+     ========================================================================== */
+  var poM = document.getElementById("poM");
+  if(poM){
+    var poLicz = function(){
+      var m = parseInt(poM.value, 10);
+      var el = function(id){ return document.getElementById(id); };
+
+      el("poMv").textContent = m + " m²";
+
+      var dniF = Math.max(1, Math.ceil(m / 100));
+      var dniT = Math.max(3, Math.ceil(m / 25) + 2);   /* skuwanie, izolacja, rury, wylewka */
+      var schniecie = 24;                               /* dni, srednio 3-4 tygodnie */
+      var gruzT = m * 0.11;
+      var calk = Math.round(gruzT * 10) % 10 === 0;
+      var gruzLiczba = calk ? String(Math.round(gruzT)) : gruzT.toFixed(1).replace(".", ",");
+      /* 1 tona, 2-4 tony, 5+ ton; wartosci ulamkowe zawsze "tony" */
+      var reszta = Math.round(gruzT) % 10, dziesiatki = Math.round(gruzT) % 100;
+      var slowo = !calk ? "tony"
+        : (Math.round(gruzT) === 1 ? "tona"
+        : (reszta >= 2 && reszta <= 4 && !(dziesiatki >= 12 && dziesiatki <= 14) ? "tony" : "ton"));
+      var gruz = gruzLiczba + " " + slowo;
+
+      el("poDniF").textContent = dniF === 1 ? "1 dzień" : dniF + " dni";
+      el("poDniT").textContent = dniT + " dni";
+      el("poGruzF").textContent = "brak";
+      el("poGruzT").textContent = "ok. " + gruz;
+      el("poGotF").textContent = dniF === 1 ? "1 dniu" : dniF + " dniach";
+      el("poGotT").textContent = "ok. " + Math.round((dniT + schniecie) / 7) + " tygodniach";
+    };
+    poM.addEventListener("input", poLicz);
+    poLicz();
+  }
+
+  /* ==========================================================================
+     HARMONOGRAM REMONTU
+     ========================================================================== */
+  var hM = document.getElementById("hM");
+  if(hM){
+    var hZakres = document.getElementById("hZakres");
+
+    var hLicz = function(){
+      var m = parseInt(hM.value, 10);
+      var zakres = hZakres.value;
+      document.getElementById("hMv").textContent = m + " m²";
+
+      var dniFrez = Math.max(1, Math.ceil(m / 100));
+      var kroki = [
+        ["Oględziny albo zdjęcia posadzki", "Sprawdzamy grubość i stan wylewki oraz przebieg instalacji w podłodze.", "przed terminem"],
+        ["Frezowanie rowków", "Frezarka z odciągiem pyłu wycina kanały pod rury.", dniFrez === 1 ? "1 dzień" : dniFrez + " dni"]
+      ];
+
+      var dni = dniFrez;
+
+      if(zakres !== "frez"){
+        var dniRur = Math.max(1, Math.ceil(m / 120));
+        kroki.push(["Układanie rur i zamknięcie rowków", "Rura wchodzi w rowek, całość zamykamy masą termoprzewodzącą.", dniRur === 1 ? "1 dzień" : dniRur + " dni"]);
+        kroki.push(["Podłączenie do rozdzielacza", "Spinamy pętle, podłączamy do źródła ciepła.", "1 dzień"]);
+        kroki.push(["Próba szczelności", "Instalacja pod ciśnieniem, sprawdzamy każdą pętlę.", "w dniu podłączenia"]);
+        dni += dniRur + 1;
+      }
+
+      if(zakres === "kotlownia"){
+        kroki.push(["Montaż kotłowni", "Źródło ciepła, pompy, zabezpieczenia, podpięcie c.w.u.", "1–2 dni"]);
+        kroki.push(["Sterowanie i szkolenie", "Listwa, termostaty, moduł internetowy, konfiguracja stref.", "1 dzień"]);
+        dni += 3;
+      }
+
+      kroki.push(["Podłoga gotowa pod okładzinę", "Bez czekania na wyschnięcie jastrychu — można kłaść płytki albo panele.", "od razu"]);
+
+      document.getElementById("harmLista").innerHTML = kroki.map(function(k){
+        return "<li><em>" + k[2] + "</em><b>" + k[0] + "</b><span>" + k[1] + "</span></li>";
+      }).join("");
+
+      document.getElementById("harmSuma").textContent = dni === 1 ? "1 dzień" : dni + " dni";
+    };
+
+    hM.addEventListener("input", hLicz);
+    hZakres.addEventListener("change", hLicz);
+    hLicz();
+  }
+
+  /* ==========================================================================
+     KONFIGURATOR STEROWANIA
+     Petle liczymy jak w planerze: okolo 10 m2 na petle.
+     ========================================================================== */
+  var kPok = document.getElementById("kPok");
+  if(kPok){
+    var kM = document.getElementById("kM");
+    var kTel = document.getElementById("kTel");
+    var kBezp = document.getElementById("kBezp");
+    var kPogoda = document.getElementById("kPogoda");
+
+    var kLicz = function(){
+      var pok = parseInt(kPok.value, 10);
+      var m = parseInt(kM.value, 10);
+      document.getElementById("kPokv").textContent = pok;
+      document.getElementById("kMv").textContent = m + " m²";
+
+      var petle = Math.max(pok, Math.round(m / 10));
+      var strefy = pok;
+
+      var lista = [];
+      lista.push("<li><b>Listwa sterująca na " + strefy + " " + (strefy === 1 ? "strefę" : strefy < 5 ? "strefy" : "stref") + "</b> — montowana przy rozdzielaczu, zbiera sygnały z termostatów i steruje siłownikami.</li>");
+      lista.push("<li><b>" + strefy + " × termostat pokojowy</b> " + (kBezp.checked ? "bezprzewodowy, bez kucia ścian pod przewody" : "przewodowy, wymaga doprowadzenia przewodu do rozdzielacza") + ".</li>");
+      lista.push("<li><b>" + petle + " × siłownik termoelektryczny</b> — po jednym na każdą pętlę na belce rozdzielacza.</li>");
+
+      if(kTel.checked){
+        lista.push("<li><b>Moduł internetowy</b> — sterowanie i harmonogramy z aplikacji w telefonie, też spoza domu.</li>");
+      }
+      if(kPogoda.checked){
+        lista.push("<li><b>Czujnik zewnętrzny i sterowanie pogodowe</b> — temperatura zasilania dobierana do pogody, zamiast stałej nastawy.</li>");
+      }
+      lista.push("<li><b>Konfiguracja stref i harmonogramów</b> plus przeszkolenie z obsługi na miejscu.</li>");
+
+      document.getElementById("konfLista").innerHTML = lista.join("");
+    };
+
+    [kPok, kM].forEach(function(e){ e.addEventListener("input", kLicz); });
+    [kTel, kBezp, kPogoda].forEach(function(e){ e.addEventListener("change", kLicz); });
+    kLicz();
+  }
+
 })();

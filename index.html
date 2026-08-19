@@ -287,6 +287,42 @@
     </div>
   </section>
 
+
+  <!-- HARMONOGRAM -->
+  <section class="section section-alt" id="harmonogram">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Ile to potrwa</span>
+        <h2>Twój harmonogram dzień po dniu</h2>
+        <p class="lede" style="margin-inline:auto;">Podaj metraż i zakres, a rozpiszemy, co dzieje się kiedy.</p>
+      </div>
+
+      <div class="harm reveal">
+        <div class="harm-sterowanie">
+          <div class="harm-pole">
+            <label for="hM">Powierzchnia <b id="hMv">80 m²</b></label>
+            <input type="range" id="hM" min="20" max="250" step="5" value="80">
+          </div>
+          <div class="harm-pole">
+            <label for="hZakres">Zakres prac</label>
+            <select id="hZakres">
+              <option value="frez">Samo frezowanie</option>
+              <option value="pelny" selected>Frezowanie z ułożeniem rur i podłączeniem</option>
+              <option value="kotlownia">Pełen zakres z kotłownią i sterowaniem</option>
+            </select>
+          </div>
+        </div>
+
+        <ol class="harm-lista" id="harmLista"></ol>
+
+        <div class="harm-suma">
+          <span>Łącznie prac na budowie</span>
+          <strong id="harmSuma">—</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- PRICING -->
   <section class="section section-alt" id="cennik">
     <div class="container">
@@ -327,6 +363,53 @@
             </tbody>
           </table>
         </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- POROWNYWARKA -->
+  <section class="section" id="porownanie">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Porównanie</span>
+        <h2>Frezowanie kontra tradycyjna podłogówka</h2>
+        <p class="lede" style="margin-inline:auto;">Przesuń suwak na swój metraż i zobacz, czym te dwie metody różnią się w praktyce.</p>
+      </div>
+
+      <div class="porown reveal">
+        <div class="porown-suwak">
+          <label for="poM">Powierzchnia <b id="poMv">80 m²</b></label>
+          <input type="range" id="poM" min="20" max="250" step="5" value="80">
+        </div>
+
+        <div class="porown-tabela">
+          <div class="porown-kol porown-nasza">
+            <div class="porown-tyt">Frezowanie <span>nasza metoda</span></div>
+            <dl>
+              <dt>Podniesienie poziomu podłogi</dt><dd><b>0 cm</b></dd>
+              <dt>Skuwanie starej posadzki</dt><dd><b>nie</b></dd>
+              <dt>Gruz do wywiezienia</dt><dd><b id="poGruzF">—</b></dd>
+              <dt>Prace na budowie</dt><dd><b id="poDniF">—</b></dd>
+              <dt>Czekanie na wyschnięcie</dt><dd><b>brak</b></dd>
+              <dt>Podłogę można kłaść po</dt><dd class="mocne"><b id="poGotF">—</b></dd>
+            </dl>
+          </div>
+
+          <div class="porown-kol">
+            <div class="porown-tyt">Tradycyjna podłogówka <span>przy remoncie</span></div>
+            <dl>
+              <dt>Podniesienie poziomu podłogi</dt><dd><b>ok. 12–15 cm</b></dd>
+              <dt>Skuwanie starej posadzki</dt><dd><b>tak</b></dd>
+              <dt>Gruz do wywiezienia</dt><dd><b id="poGruzT">—</b></dd>
+              <dt>Prace na budowie</dt><dd><b id="poDniT">—</b></dd>
+              <dt>Czekanie na wyschnięcie</dt><dd><b>3–4 tygodnie</b></dd>
+              <dt>Podłogę można kłaść po</dt><dd class="mocne"><b id="poGotT">—</b></dd>
+            </dl>
+          </div>
+        </div>
+
+        <p class="porown-stopka">Porównanie dotyczy remontu, czyli sytuacji, w której trzeba usunąć istniejącą posadzkę. Przy budowie od zera, gdzie wylewkę i tak się robi, różnica w czasie jest mniejsza. Liczby orientacyjne, dokładny harmonogram podajemy w ofercie.</p>
       </div>
     </div>
   </section>

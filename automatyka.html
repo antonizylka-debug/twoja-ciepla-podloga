@@ -169,6 +169,43 @@
     </div>
   </section>
 
+
+  <!-- KONFIGURATOR -->
+  <section class="section" id="konfigurator">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Konfigurator</span>
+        <h2>Sprawdź, czego potrzebujesz do sterowania</h2>
+        <p class="lede" style="margin-inline:auto;">Odpowiedz na trzy pytania, a pokażemy komplet elementów dla Twojej instalacji.</p>
+      </div>
+
+      <div class="konf reveal">
+        <div class="konf-sterowanie">
+          <div class="konf-pole">
+            <label for="kPok">Liczba ogrzewanych pomieszczeń <b id="kPokv">5</b></label>
+            <input type="range" id="kPok" min="1" max="14" step="1" value="5">
+          </div>
+          <div class="konf-pole">
+            <label for="kM">Łączna powierzchnia <b id="kMv">80 m²</b></label>
+            <input type="range" id="kM" min="20" max="250" step="5" value="80">
+          </div>
+          <div class="konf-pole konf-przelaczniki">
+            <label class="konf-check"><input type="checkbox" id="kTel" checked> Chcę sterować z telefonu</label>
+            <label class="konf-check"><input type="checkbox" id="kBezp" checked> Termostaty bezprzewodowe</label>
+            <label class="konf-check"><input type="checkbox" id="kPogoda"> Sterowanie pogodowe</label>
+          </div>
+        </div>
+
+        <div class="konf-wynik">
+          <h3>Twój zestaw</h3>
+          <ul id="konfLista"></ul>
+          <p class="konf-nota">Dobór elementów i konfigurację robimy u Ciebie na miejscu, razem z przeszkoleniem z obsługi. Zestaw jest orientacyjny — ostateczny dobieramy po zobaczeniu rozdzielacza.</p>
+          <a href="index.html#analiza" class="btn btn-primary btn-sm">Zapytaj o wycenę sterowania</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CROSS-LINK -->
   <section class="section">
     <div class="container">
