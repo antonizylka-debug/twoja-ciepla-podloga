@@ -879,7 +879,9 @@
 
       el("poMv").textContent = m + " m²";
 
-      var dniF = Math.max(1, Math.ceil(m / 100));
+      /* Pelen zakres, czyli frezowanie z ulozeniem rur i podlaczeniem,
+         to zwykle jeden dzien, przy duzym metrazu dwa. */
+      var dniF = m <= 120 ? 1 : (m <= 250 ? 2 : Math.ceil(m / 120));
       var dniT = Math.max(3, Math.ceil(m / 25) + 2);   /* skuwanie, izolacja, rury, wylewka */
       var schniecie = 24;                               /* dni, srednio 3-4 tygodnie */
       var gruzT = m * 0.11;
@@ -915,29 +917,37 @@
       var zakres = hZakres.value;
       document.getElementById("hMv").textContent = m + " m²";
 
-      var dniFrez = Math.max(1, Math.ceil(m / 100));
+      /* Frezowanie, ulozenie rur i podlaczenie robi ta sama ekipa tego
+         samego dnia. Samo frezowanie idzie szybciej, bo nie ma hydrauliki. */
+      var dni;
+      if(zakres === "frez"){
+        dni = m <= 200 ? 1 : Math.ceil(m / 200);
+      } else {
+        dni = m <= 120 ? 1 : (m <= 250 ? 2 : Math.ceil(m / 120));
+      }
+      var opisDni = dni === 1 ? "1 dzień" : dni + " dni";
+
       var kroki = [
-        ["Oględziny albo zdjęcia posadzki", "Sprawdzamy grubość i stan wylewki oraz przebieg instalacji w podłodze.", "przed terminem"],
-        ["Frezowanie rowków", "Frezarka z odciągiem pyłu wycina kanały pod rury.", dniFrez === 1 ? "1 dzień" : dniFrez + " dni"]
+        ["Oględziny albo zdjęcia posadzki", "Sprawdzamy grubość i stan wylewki oraz przebieg instalacji w podłodze.", "przed terminem"]
       ];
 
-      var dni = dniFrez;
-
-      if(zakres !== "frez"){
-        var dniRur = Math.max(1, Math.ceil(m / 120));
-        kroki.push(["Układanie rur i zamknięcie rowków", "Rura wchodzi w rowek, całość zamykamy masą termoprzewodzącą.", dniRur === 1 ? "1 dzień" : dniRur + " dni"]);
-        kroki.push(["Podłączenie do rozdzielacza", "Spinamy pętle, podłączamy do źródła ciepła.", "1 dzień"]);
-        kroki.push(["Próba szczelności", "Instalacja pod ciśnieniem, sprawdzamy każdą pętlę.", "w dniu podłączenia"]);
-        dni += dniRur + 1;
+      if(zakres === "frez"){
+        kroki.push(["Frezowanie rowków", "Frezarka z odciągiem pyłu wycina kanały pod rury. Do 200 m² schodzi w jeden dzień.", opisDni]);
+      } else {
+        kroki.push(["Frezowanie, ułożenie rur i podłączenie", "Wszystko robimy jednym wejściem, tego samego dnia: wycinamy rowki, układamy rurę, zamykamy rowki i spinamy pętle na rozdzielaczu.", opisDni]);
+        kroki.push(["Próba szczelności", "Instalacja pod ciśnieniem, sprawdzamy każdą pętlę. Robimy to na koniec tego samego dnia.", "bez osobnego terminu"]);
       }
 
       if(zakres === "kotlownia"){
-        kroki.push(["Montaż kotłowni", "Źródło ciepła, pompy, zabezpieczenia, podpięcie c.w.u.", "1–2 dni"]);
-        kroki.push(["Sterowanie i szkolenie", "Listwa, termostaty, moduł internetowy, konfiguracja stref.", "1 dzień"]);
-        dni += 3;
+        kroki.push(["Montaż kotłowni", "Źródło ciepła, pompy, zabezpieczenia i podpięcie ciepłej wody użytkowej.", "1–2 dni"]);
+        dni += 2;
       }
 
-      kroki.push(["Podłoga gotowa pod okładzinę", "Bez czekania na wyschnięcie jastrychu — można kłaść płytki albo panele.", "od razu"]);
+      kroki.push(["Podłoga gotowa pod okładzinę", "Bez czekania na wyschnięcie jastrychu. Płytki albo panele można kłaść od razu.", "od razu"]);
+
+      if(zakres !== "frez"){
+        kroki.push(["Sterowanie i szkolenie z obsługi", "Termostaty i konfigurację stref robimy na końcu, gdy wprowadzacie się do mieszkania. Wcześniej nie ma czego ustawiać.", "przy wprowadzce"]);
+      }
 
       document.getElementById("harmLista").innerHTML = kroki.map(function(k){
         return "<li><em>" + k[2] + "</em><b>" + k[0] + "</b><span>" + k[1] + "</span></li>";
@@ -959,8 +969,6 @@
   if(kPok){
     var kM = document.getElementById("kM");
     var kTel = document.getElementById("kTel");
-    var kBezp = document.getElementById("kBezp");
-    var kPogoda = document.getElementById("kPogoda");
 
     var kLicz = function(){
       var pok = parseInt(kPok.value, 10);
@@ -973,14 +981,11 @@
 
       var lista = [];
       lista.push("<li><b>Listwa sterująca na " + strefy + " " + (strefy === 1 ? "strefę" : strefy < 5 ? "strefy" : "stref") + "</b> — montowana przy rozdzielaczu, zbiera sygnały z termostatów i steruje siłownikami.</li>");
-      lista.push("<li><b>" + strefy + " × termostat pokojowy</b> " + (kBezp.checked ? "bezprzewodowy, bez kucia ścian pod przewody" : "przewodowy, wymaga doprowadzenia przewodu do rozdzielacza") + ".</li>");
+      lista.push("<li><b>" + strefy + " × termostat pokojowy przewodowy</b> — po jednym w każdym ogrzewanym pomieszczeniu, podłączony do listwy przy rozdzielaczu.</li>");
       lista.push("<li><b>" + petle + " × siłownik termoelektryczny</b> — po jednym na każdą pętlę na belce rozdzielacza.</li>");
 
       if(kTel.checked){
         lista.push("<li><b>Moduł internetowy</b> — sterowanie i harmonogramy z aplikacji w telefonie, też spoza domu.</li>");
-      }
-      if(kPogoda.checked){
-        lista.push("<li><b>Czujnik zewnętrzny i sterowanie pogodowe</b> — temperatura zasilania dobierana do pogody, zamiast stałej nastawy.</li>");
       }
       lista.push("<li><b>Konfiguracja stref i harmonogramów</b> plus przeszkolenie z obsługi na miejscu.</li>");
 
@@ -988,7 +993,7 @@
     };
 
     [kPok, kM].forEach(function(e){ e.addEventListener("input", kLicz); });
-    [kTel, kBezp, kPogoda].forEach(function(e){ e.addEventListener("change", kLicz); });
+    kTel.addEventListener("change", kLicz);
     kLicz();
   }
 
