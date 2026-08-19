@@ -1157,3 +1157,25 @@ h3{ font-size:1.15rem; }
 .fot:hover img{ transform:scale(1.02); }
 .fot figcaption{ margin-top:9px; font-size:.82rem; color:var(--ink-soft); }
 @media (max-width:520px){ .fot img{ height:220px; } }
+
+/* ---------- baner wpisu ---------- */
+.wpis-baner{ margin:0 0 30px; }
+.wpis-baner img{
+  width:100%; height:auto; display:block;
+  border-radius:var(--radius-lg);
+}
+
+/* ---------- przeczytaj tez ---------- */
+.powiazane{ display:grid; gap:10px; margin-top:14px; }
+.powiazane a{
+  display:block; padding:14px 18px;
+  border:1px solid var(--line); border-radius:var(--radius-md);
+  background:var(--surface); color:var(--ink); font-weight:500; font-size:.94rem;
+  text-decoration:none;
+  transition:border-color .2s ease, color .2s ease, transform .2s ease;
+}
+.powiazane a::after{ content:" →"; color:var(--accent-dark); }
+.powiazane a:hover{ border-color:var(--accent); color:var(--accent-dark); transform:translateX(3px); }
+
+/* dane firmy w stopce */
+.footer-col span{ display:block; color:var(--on-dark-soft); font-size:.9rem; margin-bottom:9px; }
