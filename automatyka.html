@@ -41,6 +41,11 @@
   "description": "Montaż i konfiguracja automatyki TECH Sterowniki do ogrzewania podłogowego — sterowanie strefowe, harmonogramy, moduł internetowy."
 }
 </script>
+<script>/* Klasa .js wlacza animacje wejscia. Zapasowy licznik odslania tresc,
+gdyby glowny skrypt sie nie wczytal — strona nigdy nie zostaje pusta. */
+document.documentElement.className+=" js";
+setTimeout(function(){var e=document.querySelectorAll(".reveal:not(.is-visible)");
+for(var i=0;i<e.length;i++){e[i].className+=" is-visible";}},3500);</script>
 </head>
 <body>
 <a class="skip-link" href="#tresc">Przejdź do treści</a>

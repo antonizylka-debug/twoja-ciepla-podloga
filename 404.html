@@ -11,6 +11,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;500&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
+<script>/* Klasa .js wlacza animacje wejscia. Zapasowy licznik odslania tresc,
+gdyby glowny skrypt sie nie wczytal — strona nigdy nie zostaje pusta. */
+document.documentElement.className+=" js";
+setTimeout(function(){var e=document.querySelectorAll(".reveal:not(.is-visible)");
+for(var i=0;i<e.length;i++){e[i].className+=" is-visible";}},3500);</script>
 </head>
 <body>
 <a class="skip-link" href="#tresc">Przejdź do treści</a>
