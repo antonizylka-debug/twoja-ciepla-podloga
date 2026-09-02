@@ -588,6 +588,11 @@
      ========================================================================== */
   var ank = document.getElementById("ank");
   if(ank){
+    /* Adres, pod ktory leci zgloszenie. Pusty = tryb awaryjny: klient dostaje
+       gotowy e-mail do wyslania, wiec zapytanie nie przepada.
+       Po zalozeniu konta (np. Formspree) wpisz tu adres formularza. */
+    var ENDPOINT = "";
+    var MAIL_FIRMY = "twojacieplapodloga@gmail.com";
     var KROKOW = 5;
     var krok = 1;
     var poziomow = 0;
@@ -832,16 +837,54 @@
         s.m2.toFixed(1).replace(".", ",") + " m²</b></div>";
       el("ankWynik").innerHTML = wiersze;
 
-      el("ankKontaktInfo").textContent =
-        "Przygotujemy wycenę i odezwiemy się na numer " + (dane.telefon || "") + ".";
+      el("ankKontaktInfo").textContent = ENDPOINT
+        ? "Przygotujemy wycenę i odezwiemy się na numer " + (dane.telefon || "") + "."
+        : "Zestawienie jest gotowe. Wyślij je jednym kliknięciem albo zadzwoń — odezwiemy się z wyceną.";
 
-      /* === TU PODEPNIJ WYSYLKE ===
-         fetch("https://formspree.io/f/TWOJ_ID", {
-           method: "POST",
-           headers: { "Content-Type": "application/json", "Accept": "application/json" },
-           body: JSON.stringify(dane)
-         });                                                                  */
-      console.log("Ankieta wyceny — zgłoszenie:", dane);
+      /* Czytelne podsumowanie — trafia i do maila, i do wysylki */
+      var opis = [
+        "Kim jest: " + (dane.kim || "-"),
+        "Etap: " + (dane.etap || "-"),
+        "Budynek: " + (dane.budynek || "-"),
+        "Zrodlo ciepla: " + (dane.zrodlo || "-"),
+        "Termin: " + (dane.termin || "-"),
+        "",
+        "Pomieszczenia:"
+      ];
+      s.dane.forEach(function(p){
+        p.pomieszczenia.forEach(function(r){
+          opis.push("  - " + r.nazwa + (p.poziom ? " (" + p.poziom + ")" : "") +
+            ": " + r.metraz + " m2" + (r.typ ? ", " + r.typ : "") + (r.podloga ? ", " + r.podloga : ""));
+        });
+      });
+      opis.push("", "Lacznie: " + s.m2.toFixed(1) + " m2");
+      opis.push("", "Kontakt: " + (dane.imie || "") + ", tel. " + (dane.telefon || "") +
+        (dane.email ? ", " + dane.email : "") + ", " + (dane.miasto || ""));
+      if(dane.wiadomosc){ opis.push("", "Wiadomosc: " + dane.wiadomosc); }
+      var trescMaila = opis.join("\n");
+
+      /* Awaryjny e-mail: dziala nawet bez podpietego endpointu */
+      var mailto = "mailto:" + MAIL_FIRMY +
+        "?subject=" + encodeURIComponent("Zapytanie o wycene — " + (dane.imie || "formularz") + ", " + s.m2.toFixed(1) + " m2") +
+        "&body=" + encodeURIComponent(trescMaila);
+      var awaryjny = document.getElementById("ankAwaryjny");
+      if(awaryjny){ awaryjny.href = mailto; }
+
+      if(ENDPOINT){
+        dane.podsumowanie = trescMaila;
+        fetch(ENDPOINT, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "Accept": "application/json" },
+          body: JSON.stringify(dane)
+        }).then(function(r){
+          if(!r.ok){ throw new Error("HTTP " + r.status); }
+          var b = document.getElementById("ankAwaryjnyBlok");
+          if(b){ b.hidden = true; }
+        }).catch(function(){
+          var b = document.getElementById("ankAwaryjnyBlok");
+          if(b){ b.hidden = false; }
+        });
+      }
 
       pokaz(KROKOW + 1);
       doGory();

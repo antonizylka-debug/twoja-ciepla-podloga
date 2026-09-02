@@ -1495,3 +1495,23 @@ h3{ font-size:1.15rem; }
 .harm-suma span, .harm-suma strong{ color:#fff; }
 .cta-block p, .price-card.featured p, .price-card.featured li{ color:var(--on-dark-soft); }
 .price-card.featured .price-list li svg{ color:var(--bursztyn); }
+
+/* ---------- skip link: widoczny dopiero po tabulacji ---------- */
+.skip-link{
+  position:absolute; left:-9999px; top:0; z-index:200;
+  background:var(--bursztyn); color:#161B22; padding:12px 20px;
+  font-weight:600; border-radius:0 0 var(--radius-md) 0; text-decoration:none;
+}
+.skip-link:focus{ left:0; }
+main:focus{ outline:none; }
+
+/* ---------- awaryjna wysyłka zgłoszenia ---------- */
+.ank-awaryjny{
+  margin:22px auto 0; max-width:460px; padding:20px;
+  border:1px solid var(--line); border-radius:var(--radius-md);
+  background:var(--bg-alt); text-align:center;
+}
+.ank-awaryjny p{ font-size:.9rem; color:var(--ink-soft); margin-bottom:14px; }
+
+/* spis treści w kompendium: wygląd bez zmian, poprawiona hierarchia nagłówków */
+.kb-toc-tytul{ font-size:.9rem; font-weight:600; margin-bottom:12px; letter-spacing:0; }

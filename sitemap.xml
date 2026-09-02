@@ -1,87 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://twojacieplapodloga.pl/frezowanie-pod-ogrzewanie-podlogowe</loc>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://twojacieplapodloga.pl/kompendium-wiedzy</loc>
+    <loc>https://antonizylka-debug.github.io/twoja-ciepla-podloga/automatyka.html</loc>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://twojacieplapodloga.pl/poradnik</loc>
+    <loc>https://antonizylka-debug.github.io/twoja-ciepla-podloga/czy-frezowane-ogrzewanie-podlogowe-sprawdzi-sie-w-bloku.html</loc>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://twojacieplapodloga.pl/poradnik-jaka-podloga-na-ogrzewanie-podlogowe</loc>
+    <loc>https://antonizylka-debug.github.io/twoja-ciepla-podloga/czy-frezowanie-mozna-wykonac-w-wylewce.html</loc>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://twojacieplapodloga.pl/poradnik-wodne-czy-elektryczne</loc>
+    <loc>https://antonizylka-debug.github.io/twoja-ciepla-podloga/czy-frezowanie-pod-ogrzewanie-podlogowe-jest-dobre-wady-i-zalety.html</loc>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://twojacieplapodloga.pl/poradnik-ogrzewanie-podlogowe-w-garazu</loc>
+    <loc>https://antonizylka-debug.github.io/twoja-ciepla-podloga/</loc>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://twojacieplapodloga.pl/poradnik-mieszkanie-deweloperskie</loc>
+    <loc>https://antonizylka-debug.github.io/twoja-ciepla-podloga/kompendium-wiedzy.html</loc>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://twojacieplapodloga.pl/poradnik-frezowanie-czy-tradycyjna-podlogowka</loc>
+    <loc>https://antonizylka-debug.github.io/twoja-ciepla-podloga/narzedzia.html</loc>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://twojacieplapodloga.pl/blog/czy-frezowanie-pod-ogrzewanie-podlogowe-jest-dobre-wady-i-zalety</loc>
+    <loc>https://antonizylka-debug.github.io/twoja-ciepla-podloga/polityka-prywatnosci.html</loc>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://twojacieplapodloga.pl/blog/czy-frezowanie-mozna-wykonac-w-wylewce</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://twojacieplapodloga.pl/blog/czy-frezowane-ogrzewanie-podlogowe-sprawdzi-sie-w-bloku</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://twojacieplapodloga.pl/poradnik-ile-kosztuje-ogrzewanie-podlogowe</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://twojacieplapodloga.pl/poradnik-temperatura-ogrzewania-podlogowego</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://twojacieplapodloga.pl/poradnik-ogrzewanie-podlogowe-pompa-ciepla</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://twojacieplapodloga.pl/poradnik-podlogowka-nie-grzeje</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://twojacieplapodloga.pl/polityka-prywatnosci</loc>
-    <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://twojacieplapodloga.pl/narzedzia</loc>
+    <loc>https://antonizylka-debug.github.io/twoja-ciepla-podloga/poradnik-frezowanie-czy-tradycyjna-podlogowka.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://antonizylka-debug.github.io/twoja-ciepla-podloga/poradnik-ile-kosztuje-ogrzewanie-podlogowe.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://antonizylka-debug.github.io/twoja-ciepla-podloga/poradnik-jaka-podloga-na-ogrzewanie-podlogowe.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://antonizylka-debug.github.io/twoja-ciepla-podloga/poradnik-mieszkanie-deweloperskie.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://antonizylka-debug.github.io/twoja-ciepla-podloga/poradnik-ogrzewanie-podlogowe-pompa-ciepla.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://antonizylka-debug.github.io/twoja-ciepla-podloga/poradnik-ogrzewanie-podlogowe-w-garazu.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://antonizylka-debug.github.io/twoja-ciepla-podloga/poradnik-podlogowka-nie-grzeje.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://antonizylka-debug.github.io/twoja-ciepla-podloga/poradnik-temperatura-ogrzewania-podlogowego.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://antonizylka-debug.github.io/twoja-ciepla-podloga/poradnik-wodne-czy-elektryczne.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://antonizylka-debug.github.io/twoja-ciepla-podloga/poradnik.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://antonizylka-debug.github.io/twoja-ciepla-podloga/usuwanie-kleju.html</loc>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

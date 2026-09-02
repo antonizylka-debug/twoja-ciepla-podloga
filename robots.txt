@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://twojacieplapodloga.pl/sitemap.xml
+Sitemap: https://antonizylka-debug.github.io/twoja-ciepla-podloga/sitemap.xml
